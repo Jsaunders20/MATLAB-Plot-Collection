@@ -1,0 +1,23 @@
+clear;
+
+% Define parameters
+R = 3; % Major radius of the torus
+r = 1; % Minor radius of the torus
+
+% Define the meshgrid for u and v
+u = linspace(0, 2*pi, 100); % Parameter u
+v = linspace(0, 2*pi, 100); % Parameter v
+[U, V] = meshgrid(u, v);
+
+% Calculate the coordinates
+x = (R + r*cos(V)).*cos(U);
+y = (R + r*cos(V)).*sin(U);
+z = r*sin(V);
+
+% Plot the torus
+surf(x, y, z);
+axis equal; % Ensure aspect ratio is 1:1:1
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+title('Torus');
